@@ -1,0 +1,15 @@
+From: "support@paypal.com" <security-alert@totally-legit-paypa1.tk>
+To: victim@example.com
+Subject: URGENT!!! YOUR ACCOUNT HAS BEEN SUSPENDED - ACT NOW!!!
+Reply-To: scammer@differentdomain.ru
+Authentication-Results: mx.example.com; spf=fail smtp.mailfrom=totally-legit-paypa1.tk; dkim=fail; dmarc=fail
+Received: from unknown (HELO mail.totally-legit-paypa1.tk) (203.0.113.42) by mx.example.com
+Content-Type: text/html; charset="utf-8"
+
+<html><body>
+<p>CONGRATULATIONS YOU HAVE BEEN SELECTED for a free gift card! Your account has been suspended,
+verify your account immediately to avoid suspension. This is your final notice, act now within 24 hours!</p>
+<p>Also check out this risk-free investment opportunity, double your money with our bitcoin investment plan.
+Click here: <a href="http://bit.ly/abc123">www.paypal.com</a></p>
+<p>Unsubscribe any time.</p>
+</body></html>

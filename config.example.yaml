@@ -1,0 +1,36 @@
+# Copy to config.yaml and fill in your accounts. Never commit config.yaml
+# (it references credentials/tokens) -- see .gitignore.
+
+accounts:
+  - name: personal-gmail
+    provider: gmail
+    credentials_file: credentials.json   # OAuth client secret from Google Cloud Console
+    token_file: token-personal.json      # created automatically on first run
+    action: label                        # label | trash | delete
+    spam_label: MailWarden/Spam
+    remove_from_inbox: true
+    query: "in:inbox"                    # Gmail search query for what to scan
+    dry_run: true                        # flip to false once you trust the scoring
+
+  - name: work-outlook
+    provider: imap
+    host: outlook.office365.com
+    port: 993
+    username: me@example.com
+    password_env: MAILWARDEN_OUTLOOK_PASSWORD   # set this env var; use an app password
+    mailbox: INBOX
+    spam_folder: Junk
+    trash_folder: Deleted Items
+    search: "UNSEEN"                     # IMAP SEARCH criteria for what to scan
+    action: move
+    dry_run: true
+
+# Optional: override the built-in rule weights/keywords (see
+# mailwarden/rules/default_rules.yaml for the format).
+rules_file: null
+
+dnsbl_enabled: true
+dnsbl_zone: zen.spamhaus.org
+
+# Where sender history + allow/block lists + scan log are kept (sqlite).
+store_path: mailwarden.db

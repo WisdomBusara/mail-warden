@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# secrets / local state -- never commit these
+config.yaml
+credentials.json
+token*.json
+*.db

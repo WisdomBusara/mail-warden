@@ -1,0 +1,101 @@
+# Default rule weights, modeled on SpamAssassin's scoring philosophy:
+# many small, independent signals summed into one score, checked against
+# a threshold. Copy this file and pass --rules to override/tune weights.
+
+thresholds:
+  spam: 5.0            # score >= this -> classified spam
+  high_confidence: 8.0 # score >= this -> safe to auto-delete instead of just labeling
+
+scores:
+  MISSING_DATE: 1.0
+  MISSING_MESSAGE_ID: 1.5
+  FROM_NAME_SPOOF: 2.5
+  REPLY_TO_MISMATCH: 1.5
+  AUTH_SPF_FAIL: 3.0
+  AUTH_DKIM_FAIL: 2.0
+  AUTH_DMARC_FAIL: 3.0
+  NO_AUTH_RESULTS: 0.5
+  DNSBL_LISTED: 5.0
+  SUBJECT_ALL_CAPS: 1.5
+  EXCESSIVE_EXCLAMATION: 1.0
+  SUSPICIOUS_KEYWORD: 0.8    # applied per distinct keyword hit, capped at KEYWORD_CAP
+  KEYWORD_CAP: 4.0
+  URGENT_LANGUAGE: 1.5
+  SHORTENED_URL: 1.0
+  IP_LITERAL_URL: 2.5
+  LINK_TEXT_MISMATCH: 2.5
+  EXECUTABLE_ATTACHMENT: 5.0
+  DOUBLE_EXTENSION_ATTACHMENT: 4.0
+  HTML_ONLY_NO_TEXT: 0.5
+  UNSUBSCRIBE_NO_LIST_HEADER: 0.5
+  FIRST_TIME_SENDER: 0.5
+  WHITELISTED_SENDER: -10.0
+  BLACKLISTED_SENDER: 10.0
+
+# Substrings matched case-insensitively against subject + text body.
+keywords:
+  - "viagra"
+  - "cialis"
+  - "lottery winner"
+  - "you have won"
+  - "you've won"
+  - "claim your prize"
+  - "nigerian prince"
+  - "wire transfer"
+  - "bitcoin investment"
+  - "crypto investment opportunity"
+  - "double your money"
+  - "risk-free investment"
+  - "work from home"
+  - "no credit check"
+  - "congratulations you have been selected"
+  - "act now"
+  - "limited time offer"
+  - "click here to claim"
+  - "verify your account"
+  - "your account has been suspended"
+  - "confirm your password"
+  - "unusual activity detected"
+  - "million dollars"
+  - "inheritance"
+  - "free gift card"
+  - "weight loss"
+  - "enlargement"
+  - "hot singles"
+  - "cheap meds"
+  - "pharmacy online"
+
+urgent_phrases:
+  - "act now"
+  - "immediately"
+  - "urgent"
+  - "act fast"
+  - "expires today"
+  - "within 24 hours"
+  - "final notice"
+  - "your account will be closed"
+  - "avoid suspension"
+
+shortener_domains:
+  - "bit.ly"
+  - "tinyurl.com"
+  - "t.co"
+  - "goo.gl"
+  - "ow.ly"
+  - "is.gd"
+  - "buff.ly"
+  - "rebrand.ly"
+  - "cutt.ly"
+
+executable_extensions:
+  - ".exe"
+  - ".scr"
+  - ".bat"
+  - ".cmd"
+  - ".com"
+  - ".pif"
+  - ".vbs"
+  - ".js"
+  - ".jar"
+  - ".msi"
+  - ".ps1"

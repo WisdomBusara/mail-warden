@@ -1,0 +1,18 @@
+From: Alex Rivera <alex.rivera@example.com>
+To: you@example.com
+Subject: Notes from today's planning meeting
+Date: Wed, 10 Sep 2025 14:32:00 -0700
+Message-ID: <CAF8x7z9k2p3q@mail.example.com>
+Authentication-Results: mx.example.com; spf=pass smtp.mailfrom=example.com; dkim=pass; dmarc=pass
+Received: from mail.example.com (198.51.100.10) by mx.example.com
+Content-Type: text/plain; charset="utf-8"
+
+Hey,
+
+Thanks for joining the planning meeting today. I've attached the notes below
+and will follow up with the revised timeline tomorrow.
+
+Let me know if I missed anything.
+
+Best,
+Alex
